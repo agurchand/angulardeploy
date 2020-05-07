@@ -10,19 +10,19 @@ export class BankService {
     constructor(private http: HttpClient) {}
 
     getUserbalance(user_id) {
-        return this.http.get('http://localhost:3001/user/balance/'+user_id);
+        return this.http.get('https://shrouded-everglades-67304.herokuapp.com/user/balance/'+user_id);
     }
 
     getUserTransactions(user_id) {        
-        return this.http.get('http://localhost:3001/transaction/user/'+user_id);
+        return this.http.get('https://shrouded-everglades-67304.herokuapp.com/transaction/user/'+user_id);
     }
 
     addUserTransaction(transData) {
-        return this.http.post('http://localhost:3001/transaction/add', transData);
+        return this.http.post('https://shrouded-everglades-67304.herokuapp.com/transaction/add', transData);
     }
     
     updateUserPassword(user_id, data){
-        return this.http.patch('http://localhost:3001/user/updatepass/'+user_id, data);
+        return this.http.patch('https://shrouded-everglades-67304.herokuapp.com/user/updatepass/'+user_id, data);
     }
 
 }

@@ -24,7 +24,7 @@ export class AuthService {
     constructor(private http: HttpClient, private router: Router) {}
 
     signUp(username: string, password: string, email: string, dob: string, fullname: string) {
-        return this.http.post('http://localhost:3001/user/add', {
+        return this.http.post('https://shrouded-everglades-67304.herokuapp.com/user/add', {
             username: username,
             password: password,
             fullname: fullname,
@@ -34,7 +34,7 @@ export class AuthService {
     }
 
     signIn(username:string, password:string) {
-        return this.http.post<AuthResponseData>('http://localhost:3001/user/login', {
+        return this.http.post<AuthResponseData>('https://shrouded-everglades-67304.herokuapp.com/user/login', {
             username: username,
             password: password
         }).pipe(tap(resData => {
